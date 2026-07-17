@@ -1,0 +1,12 @@
+package com.staj.talepyonetimi.enums;
+
+public enum NotificationType {
+    REQUEST_SUBMITTED,
+    REQUEST_APPROVED,
+    REQUEST_REJECTED,
+    REQUEST_ASSIGNED,
+    REQUEST_STARTED,
+    REQUEST_WAITING_FOR_PART,
+    REQUEST_COMPLETED,
+    REQUEST_CANCELLED;
+}
