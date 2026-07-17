@@ -2,6 +2,7 @@ package com.staj.talepyonetimi.enums;
 
 public enum RequestStatus {
     OPEN("Açık"),
+    CREATED("Oluşturuldu"),
     WAITING_FOR_APPROVAL("Onay Bekliyor"),
     APPROVED("Onaylandı"),
     ASSIGNED("Atandı"),

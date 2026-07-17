@@ -3,8 +3,8 @@ package com.staj.talepyonetimi.enums;
 public enum Role {
     ADMIN("Sistem Yöneticisi"),
     UNIT_MANAGER("Birim Yöneticisi"),
-    PERSONNEL("Personel"),
-    USER("Kullanıcı");
+    TECHNICIAN("Teknisyen"),
+    PERSONNEL("Personel");
     private final String displayName;
 
     Role(String displayName) {
