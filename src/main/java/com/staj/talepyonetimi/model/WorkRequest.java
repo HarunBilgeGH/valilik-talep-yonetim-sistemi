@@ -1,6 +1,5 @@
 package com.staj.talepyonetimi.model;
 
-import java.time.Clock;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
