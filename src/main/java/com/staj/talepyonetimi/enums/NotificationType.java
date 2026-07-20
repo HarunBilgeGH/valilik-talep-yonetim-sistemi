@@ -9,4 +9,12 @@ public enum NotificationType {
     REQUEST_WAITING_FOR_PART,
     REQUEST_COMPLETED,
     REQUEST_CANCELLED;
+
+
+ public boolean isTerminal() {
+        return switch (this) {
+            case REQUEST_SUBMITTED, REQUEST_COMPLETED, REQUEST_CANCELLED -> true;
+            default -> false;
+        };
+    }
 }
