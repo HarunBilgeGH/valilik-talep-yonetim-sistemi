@@ -18,7 +18,7 @@ public enum RequestPriority {
     public String getDisplayName() {
         return this.displayName;
     }
-    public Duration getDruation() {
+    public Duration getDuration() {
         return this.duration;
     }
 

@@ -28,4 +28,7 @@ public enum RequestStatus {
             default -> false;
         };
     }
+    public boolean isCompleted() {
+        return this == COMPLETED;
+    }
 }

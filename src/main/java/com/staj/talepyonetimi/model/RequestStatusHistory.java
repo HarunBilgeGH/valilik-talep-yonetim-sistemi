@@ -1,5 +1,5 @@
 package com.staj.talepyonetimi.model;
 
-public class StatusHistory {
+public class RequestStatusHistory {
     
 }
