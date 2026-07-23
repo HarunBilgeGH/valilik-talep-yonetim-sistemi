@@ -8,9 +8,9 @@ public class RequestSearchCriteria {
     private RequestStatus status;
     private RequestPriority priority;
     private RequestCategory category;
-    private Long departmentId;
-    private Long assignedUserId;
-    private Long createdByUserId;
+    private String departmentId;
+    private String assignedUserId;
+    private String createdByUserId;
     private String keyword;
     private Boolean overdue;
 
@@ -18,9 +18,9 @@ public class RequestSearchCriteria {
         RequestStatus status,
         RequestPriority priority,
         RequestCategory category,
-        Long departmentId,
-        Long assignedUserId,
-        Long createdByUserId,
+        String departmentId,
+        String assignedUserId,
+        String createdByUserId,
         String keyword,
         Boolean overdue
     ) {
@@ -59,24 +59,24 @@ public class RequestSearchCriteria {
         this.category = category;
     }
 
-    public Long getDepartmentId() {
+    public String getDepartmentId() {
         return this.departmentId;
     }
-    public void setDepartmentId(Long departmentId) {
+    public void setDepartmentId(String departmentId) {
         this.departmentId = departmentId;
     }
 
-    public Long getAssignedUserId() {
+    public String getAssignedUserId() {
         return this.assignedUserId;
     }
-    public void setAssignedUserId(Long assignedUserId) {
+    public void setAssignedUserId(String assignedUserId) {
         this.assignedUserId = assignedUserId;
     }
 
-    public Long getCreatedByUserId() {
+    public String getCreatedByUserId() {
         return this.createdByUserId;
     }
-    public void setCreatedByUserId(Long createdByUserId) {
+    public void setCreatedByUserId(String createdByUserId) {
         this.createdByUserId = createdByUserId;
     }
 

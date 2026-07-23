@@ -6,9 +6,11 @@ import java.util.Optional;
 
 import com.staj.talepyonetimi.model.Department;
 import com.staj.talepyonetimi.repository.DepartmentRepository;
+import com.staj.talepyonetimi.util.IdGenerator;
 
 public class InMemoryDepartmentRepository implements DepartmentRepository {
     private final List<Department> departments = new ArrayList<>();
+    private final IdGenerator idGenerator = new IdGenerator("D");
 
     @Override
     public Department save(Department department) {
@@ -17,6 +19,7 @@ public class InMemoryDepartmentRepository implements DepartmentRepository {
         }
 
         if (department.getId() == null) {
+            department.setId(idGenerator.nextId());
             this.departments.add(department);
             return department;
         }
@@ -35,7 +38,7 @@ public class InMemoryDepartmentRepository implements DepartmentRepository {
     }
     
     @Override
-    public Optional<Department> findById(Long id) {
+    public Optional<Department> findById(String id) {
         if (id == null) {
             return Optional.empty();
         }

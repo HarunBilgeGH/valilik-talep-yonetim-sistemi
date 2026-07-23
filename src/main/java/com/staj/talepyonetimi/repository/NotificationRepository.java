@@ -7,7 +7,7 @@ import com.staj.talepyonetimi.model.Notification;
 
 public interface NotificationRepository {
     Notification save(Notification notification);
-    Optional<Notification> findById(Long id);
-    List<Notification> findByReceiverId(Long receiverId);
-    List<Notification> findUnreadByReceiverId(Long receiverId);
+    Optional<Notification> findById(String id);
+    List<Notification> findByReceiverId(String receiverId);
+    List<Notification> findUnreadByReceiverId(String receiverId);
 }

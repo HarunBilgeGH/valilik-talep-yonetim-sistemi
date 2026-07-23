@@ -6,13 +6,14 @@ import java.util.Optional;
 
 import com.staj.talepyonetimi.model.User;
 import com.staj.talepyonetimi.repository.UserRepository;
+import com.staj.talepyonetimi.util.IdGenerator;
 
 public class InMemoryUserRepository implements UserRepository {
     private final List<User> users = new ArrayList<>();
-
+    private final IdGenerator idGenerator = new IdGenerator("U");
 
     @Override
-    public Optional<User> findById(Long id) {
+    public Optional<User> findById(String id) {
         if (id == null) {
             return Optional.empty();
         }
@@ -37,7 +38,7 @@ public class InMemoryUserRepository implements UserRepository {
     }
 
     @Override
-    public void deleteById(Long id) {
+    public void deleteById(String id) {
         if (id == null) {
             return;
         }
@@ -50,7 +51,9 @@ public class InMemoryUserRepository implements UserRepository {
             return null;
         }
 
+
         if (user.getId() == null) {
+            user.setId(idGenerator.nextId());
             this.users.add(user);
             return user;
         }

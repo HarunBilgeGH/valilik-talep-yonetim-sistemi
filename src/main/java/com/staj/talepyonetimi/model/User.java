@@ -3,7 +3,7 @@ package com.staj.talepyonetimi.model;
 import com.staj.talepyonetimi.enums.Role;
 
 public class User {
-    private Long id;
+    private String id;
     private String username;
     private String passwordHash;
     private String fullName;
@@ -11,7 +11,7 @@ public class User {
     private Department department;
     private Boolean active;
 
-    public User(Long id, String username, String passwordHash, String fullName, Role role, Department department, Boolean active) {
+    public User(String id, String username, String passwordHash, String fullName, Role role, Department department, Boolean active) {
         this.id = id;
         this.username = username;
         this.passwordHash = passwordHash;
@@ -23,8 +23,11 @@ public class User {
     public User() {
 
     }
-    public Long getId() {
+    public String getId() {
         return this.id;
+    }
+    public void setId(String id) {
+        this.id=id;
     }
     public String getUsername() {
         return this.username;
@@ -72,8 +75,8 @@ public class User {
     public Boolean isPersonnel() {
         return Role.PERSONNEL.equals(this.role);
     }
-    public Boolean belongsToDepartment(Long departmentId) {
-        if (this.department == null || departmentId == null) {
+    public Boolean belongsToDepartment(String departmentId) {
+        if (this.department == null || this.department.getId() == null || departmentId == null) {
             return false;
         }
         return this.department.getId().equals(departmentId);

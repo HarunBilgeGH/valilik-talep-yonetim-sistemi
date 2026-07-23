@@ -5,7 +5,7 @@ import java.time.LocalDateTime;
 import com.staj.talepyonetimi.enums.NotificationType;
 
 public class Notification {
-    private final Long id;
+    private String id;
     private final User receiver;
     private final NotificationType type;
     private final String message;
@@ -13,7 +13,7 @@ public class Notification {
     private boolean read = false;
 
     public Notification(
-        Long id,
+        String id,
         User receiver,
         NotificationType type,
         String message,
@@ -26,8 +26,11 @@ public class Notification {
         this.createdAt = createdAt;
     }
 
-    public Long getId() {
+    public String getId() {
         return this.id;
+    }
+    public void setId(String id) {
+        this.id=id;
     }
     public User getReceiver() {
         return this.receiver;
@@ -48,7 +51,7 @@ public class Notification {
     public void markAsRead() {
         this.read = true;
     }
-    public boolean belongsTo(Long userId) {
+    public boolean belongsTo(String userId) {
         return receiver != null 
         && receiver.getId() != null 
         && userId != null 

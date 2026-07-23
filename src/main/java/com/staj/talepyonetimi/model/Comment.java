@@ -3,13 +3,13 @@ package com.staj.talepyonetimi.model;
 import java.time.LocalDateTime;
 
 public class Comment {
-    private final Long id;
+    private String id;
     private final String text;
     private final User author;
     private final LocalDateTime createdAt;
 
     public Comment(
-        Long id,
+        String id,
         String text,
         User author,
         LocalDateTime createdAt
@@ -19,10 +19,12 @@ public class Comment {
         this.author = author;
         this.createdAt = createdAt;
     }
-    public long getId() {
+    public String getId() {
         return this.id; 
     }
-
+    public void setId(String id) {
+            this.id=id;
+        }
     public String getText() {
         return this.text;
     }
@@ -32,9 +34,10 @@ public class Comment {
     public LocalDateTime getCreatedAt() {
         return this.createdAt;
     }
-    public boolean isWrittenBy(long userId) {
+    public boolean isWrittenBy(String userId) {
         return this.author != null 
             && this.author.getId() != null 
+            && userId != null
             && this.author.getId().equals(userId);
     }
 }

@@ -8,7 +8,7 @@ import com.staj.talepyonetimi.model.Department;
 public interface DepartmentRepository {
     Department save(Department department);
 
-    Optional<Department> findById(Long id);
+    Optional<Department> findById(String id);
 
     List<Department> findAll();
 

@@ -1,7 +1,7 @@
 package com.staj.talepyonetimi.model;
 
 public class Department {
-    private Long id;
+    private String id;
     private String name;
     private boolean active;
 
@@ -9,14 +9,17 @@ public class Department {
 
     }
 
-    public Department(Long id,String name,boolean active) {
+    public Department(String id,String name,boolean active) {
         this.id = id;
         this.name = name;
         this.active = active;
     }
 
-    public Long getId() {
+    public String getId() {
         return this.id;
+    }
+    public void setId(String id) {
+        this.id=id;
     }
     public String getName() {
         return this.name;

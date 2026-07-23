@@ -9,7 +9,7 @@ import com.staj.talepyonetimi.enums.RequestPriority;
 import com.staj.talepyonetimi.enums.RequestStatus;
 
 public class WorkRequest {
-    private Long id;
+    private String id;
     private String requestNumber;
     private String title;
     private String description;
@@ -63,8 +63,11 @@ public class WorkRequest {
     }
 
     
-    public Long getId() {
+    public String getId() {
         return this.id;
+    }
+    public void setId(String id) {
+        this.id=id;
     }
     public String getRequestNumber() {
         return this.requestNumber;
@@ -124,14 +127,16 @@ public class WorkRequest {
         }
         return false;
     }
-    public boolean isAssignedTo(long userId) {
+    public boolean isAssignedTo(String userId) {
         return this.assignedTo != null
             && this.assignedTo.getId() != null
+            && userId != null
             && this.assignedTo.getId().equals(userId);
     }
-    public boolean belongsToDepartment(long departmentId) {
+    public boolean belongsToDepartment(String departmentId) {
         return this.department != null 
             && this.department.getId() != null
+            && departmentId != null
             && this.department.getId().equals(departmentId); 
             
     }

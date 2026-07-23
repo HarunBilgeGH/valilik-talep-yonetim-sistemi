@@ -5,7 +5,7 @@ import java.time.LocalDateTime;
 import com.staj.talepyonetimi.enums.RequestStatus;
 
 public class RequestStatusHistory {
-    private final Long id;
+    private String id;
     private final RequestStatus oldStatus;
     private final RequestStatus newStatus;
     private final User changedBy;
@@ -13,7 +13,7 @@ public class RequestStatusHistory {
     private final String explanation;
 
     public RequestStatusHistory(
-        Long id, 
+        String id, 
         RequestStatus oldStatus, 
         RequestStatus newStatus, 
         User changedBy, 
@@ -37,8 +37,11 @@ public class RequestStatusHistory {
         this (null, oldStatus, newStatus, changedBy, changedAt, null);
     }
 
-    public Long getId() {
+    public String getId() {
         return this.id;
+    }
+    public void setId(String id) {
+        this.id=id;
     }
     public RequestStatus getOldStatus() {
         return this.oldStatus;

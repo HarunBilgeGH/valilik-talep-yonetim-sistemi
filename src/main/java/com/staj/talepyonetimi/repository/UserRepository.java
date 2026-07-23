@@ -8,7 +8,7 @@ import com.staj.talepyonetimi.model.User;
 public interface UserRepository {
     User save(User user);
 
-    Optional<User> findById(Long id);
+    Optional<User> findById(String id);
 
     Optional<User> findByUsername(String username);
 
@@ -16,5 +16,7 @@ public interface UserRepository {
 
     boolean existsByUsername(String username);
 
-    void deleteById(Long id);
+    void deleteById(String id);
+
+    
 }

@@ -8,11 +8,11 @@ import com.staj.talepyonetimi.model.WorkRequest;
 public interface RequestRepository {
     WorkRequest save(WorkRequest request);
 
-    Optional<WorkRequest> findById(Long id);
+    Optional<WorkRequest> findById(String id);
 
     Optional<WorkRequest> findByRequestNumber(String requestNumber);
 
     List<WorkRequest> findAll();
 
-    boolean existsActiveRequestByTitleAndCreatedBy(String title, Long createdByUserId); 
+    boolean existsActiveRequestByTitleAndCreatedBy(String title, String createdByUserId); 
 }
