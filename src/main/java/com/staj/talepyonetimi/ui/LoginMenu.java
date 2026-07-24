@@ -17,23 +17,38 @@ public class LoginMenu {
         this.authenticationService = authenticationService;
         this.scanner = scanner;
     }
+
     public User show() {
-        while (true) { 
-            String userName = scanner.nextLine();
-            
-            if (userName.equals("0")) {
+        while (true) {
+            System.out.println();
+            System.out.println("=== GİRİŞ ===");
+            System.out.println("Çıkış yapmak için 0 yazın.");
+            System.out.print("Kullanıcı adı: ");
+
+            String userName = scanner.nextLine().trim();
+
+            if ("0".equals(userName)) {
                 return null;
             }
-            System.out.print("Password: ");
+
+            if (userName.isBlank()) {
+                System.out.println("Kullanıcı adı boş olamaz.");
+                continue;
+            }
+
+            System.out.print("Şifre: ");
             String password = scanner.nextLine();
-            User loggedInUser = authenticationService.login(userName, password);
+
+            User loggedInUser = authenticationService.login(
+                userName,
+                password
+            );
+
             if (loggedInUser != null) {
                 return loggedInUser;
             }
-            else {
-                System.out.println("Kullanıcı adı veya şifre hatalı.");
-            }
 
+            System.out.println("Kullanıcı adı veya şifre hatalı.");
         }
     }
 }
