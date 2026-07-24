@@ -36,7 +36,7 @@ public class DataSeeder {
             null,
             "personel",
             "1234",
-            "Ayşe Personel",
+            "Harun Personel",
             Role.PERSONNEL,
             informationTechnology,
             true
@@ -46,7 +46,7 @@ public class DataSeeder {
             null,
             "teknisyen",
             "1234",
-            "Mehmet Teknisyen",
+            "Fazıl Teknisyen",
             Role.TECHNICIAN,
             informationTechnology,
             true
@@ -56,7 +56,7 @@ public class DataSeeder {
             null,
             "yonetici",
             "1234",
-            "Ahmet Yönetici",
+            "Büşra Yönetici",
             Role.UNIT_MANAGER,
             informationTechnology,
             true
@@ -66,7 +66,7 @@ public class DataSeeder {
             null,
             "admin",
             "1234",
-            "Sistem Yöneticisi",
+            "Sistem Yöneticisi - Mümtaz KUZDERE",
             Role.ADMIN,
             informationTechnology,
             true

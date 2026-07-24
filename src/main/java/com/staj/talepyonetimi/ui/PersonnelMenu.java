@@ -111,9 +111,9 @@ public class PersonnelMenu {
                     return categories[choice - 1];
                 }
             } catch (NumberFormatException ignored) {
-                System.out.println("Geçerli bir kategori seçin.");
             }
 
+            System.out.println("Geçerli bir kategori seçin.");
         }
     }
 
@@ -140,9 +140,9 @@ public class PersonnelMenu {
                     return priorities[choice - 1];
                 }
             } catch (NumberFormatException ignored) {
-                System.out.println("Geçerli bir öncelik seçin.");
             }
 
+            System.out.println("Geçerli bir öncelik seçin.");
         }
     }
 }
