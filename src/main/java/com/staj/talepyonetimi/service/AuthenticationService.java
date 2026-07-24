@@ -6,7 +6,7 @@ import com.staj.talepyonetimi.model.User;
 import com.staj.talepyonetimi.repository.UserRepository;
 
 public class AuthenticationService {
-    private UserRepository userRepository;
+    private final UserRepository userRepository;
 
     public AuthenticationService(UserRepository userRepository) {
         this.userRepository = userRepository;
@@ -16,15 +16,22 @@ public class AuthenticationService {
         if (username == null || password == null) {
             return null;
         }
-        
-        Optional<User> userOptional = userRepository.findByUsername(username);
+
+        Optional<User> userOptional =
+            userRepository.findByUsername(username);
+
         if (userOptional.isEmpty()) {
             return null;
         }
+
         User user = userOptional.get();
-        if (!user.isActive() || user.getPassword() == null || !user.getPassword().equals(password)) {
+
+        if (!Boolean.TRUE.equals(user.isActive())
+                || user.getPassword() == null
+                || !user.getPassword().equals(password)) {
             return null;
         }
+
         return user;
     }
 }
