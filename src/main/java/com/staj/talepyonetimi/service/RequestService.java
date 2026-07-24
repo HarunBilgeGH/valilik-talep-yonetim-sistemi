@@ -48,15 +48,15 @@ public class RequestService {
         if (technicianId == null || technicianId.isBlank()) {
             return List.of();
         }
-        List <WorkRequest> result = new ArrayList<>();
+
+        List<WorkRequest> result = new ArrayList<>();
+
         for (WorkRequest request : requestRepository.findAll()) {
-            User createdBy = request.getCreatedBy();
-            if (createdBy != null 
-                    && createdBy.getId() != null
-                    && createdBy.getId().equals(technicianId)) {
-                        result.add(request);
-                    }
+            if (request.isAssignedTo(technicianId)) {
+                result.add(request);
+            }
         }
+
         return result;
     }
     
